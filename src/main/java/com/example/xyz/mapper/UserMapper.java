@@ -1,14 +1,28 @@
 package com.example.xyz.mapper;
 
-import com.example.xyz.domain.dto.UserDTO;
+import com.example.xyz.domain.entities.UserRole;
 import com.example.xyz.domain.entity.User;
-import org.mapstruct.InheritInverseConfiguration;
-import org.mapstruct.Mapper;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = "spring")
-public interface UserMapper {
-    UserDTO map(User user);
+import java.time.LocalDateTime;
 
-    @InheritInverseConfiguration
-    User map(UserDTO userDto);
+@Component
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+public class UserMapper {
+    PasswordEncoder passwordEncoder;
+
+    public User getUser(User user) {
+        return user.toBuilder()
+                .password(passwordEncoder.encode(user.getPassword()))
+                .role(UserRole.USER)
+                .enabled(true)
+                .createdAt(LocalDateTime.now())
+                .updatedAt(LocalDateTime.now())
+                .build();
+    }
 }

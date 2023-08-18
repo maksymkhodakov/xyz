@@ -13,4 +13,5 @@ public interface IUser {
     String getLastName();
     LocalDateTime getCreatedAt();
     LocalDateTime getUpdatedAt();
+    boolean isEnabled();
 }

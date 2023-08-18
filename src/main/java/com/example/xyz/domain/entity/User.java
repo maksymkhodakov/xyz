@@ -24,9 +24,22 @@ public class User implements IUser {
     private String lastName;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private boolean enabled;
 
     @ToString.Include(name = "password")
     private String maskPassword() {
         return OWASPUtil.maskValue(password);
+    }
+
+    public User(IUser iUser) {
+        this.id = iUser.getId();
+        this.username = iUser.getUsername();
+        this.password = iUser.getPassword();
+        this.role = iUser.getRole();
+        this.firstName = iUser.getFirstName();
+        this.lastName = iUser.getLastName();
+        this.createdAt = iUser.getCreatedAt();
+        this.updatedAt = iUser.getUpdatedAt();
+        this.enabled = iUser.isEnabled();
     }
 }
