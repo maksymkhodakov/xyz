@@ -11,6 +11,20 @@ spring:
     locations: classpath:db/migration
     user: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+  cloud:
+    aws:
+      credentials:
+        access-key: ${AWS_ACCESS_KEY}
+        secret-key: ${AWS_SECRET_ACCESS_KEY}
+      region:
+        static: ${AWS_REGION}
+
+sqs:
+  notifications:
+    queue:
+      name: ${SQS_QUEUE_NAME}
+      region: ${AWS_REGION}
+      url: ${SQS_QUEUE_URL}
 
 jwt:
   password:

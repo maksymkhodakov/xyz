@@ -1,5 +1,6 @@
-package com.example.xyz.security;
+package com.example.xyz.config;
 
+import com.example.xyz.security.BearerTokenServerAuthenticationConverter;
 import com.example.xyz.services.impl.AuthenticationManager;
 import com.example.xyz.services.impl.JwtHandlerImpl;
 import lombok.extern.slf4j.Slf4j;
