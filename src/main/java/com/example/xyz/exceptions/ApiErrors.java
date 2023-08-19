@@ -13,7 +13,10 @@ public enum ApiErrors {
     USER_IS_DISABLED("User is disabled", HttpStatus.BAD_REQUEST),
     PASSWORD_MISMATCH("User password mismatch", HttpStatus.BAD_REQUEST),
     TOKEN_EXPIRED("Token expired", HttpStatus.BAD_REQUEST),
-    UNAUTHORIZED("Unauthorized", HttpStatus.UNAUTHORIZED);
+    UNAUTHORIZED("Unauthorized", HttpStatus.UNAUTHORIZED),
+    ITEM_NOT_FOUND("Item not found", HttpStatus.NOT_FOUND),
+    UNEXPECTED_VERSION("Unexpected version", HttpStatus.BAD_REQUEST),
+    TAG_NOT_FOUND("Tag not found", HttpStatus.NOT_FOUND);
 
     private final String data;
     private final HttpStatus httpStatus;

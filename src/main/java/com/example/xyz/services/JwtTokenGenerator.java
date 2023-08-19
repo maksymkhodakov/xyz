@@ -1,6 +1,6 @@
 package com.example.xyz.services;
 
-import com.example.xyz.domain.entity.User;
+import com.example.xyz.domain.entities.User;
 import com.example.xyz.security.TokenDetails;
 
 import java.util.Date;

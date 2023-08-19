@@ -1,7 +1,7 @@
-package com.example.xyz.domain.entity;
+package com.example.xyz.domain.entities;
 
 import com.example.xyz.Utils.OWASPUtil;
-import com.example.xyz.domain.entities.UserRole;
+import com.example.xyz.domain.enums.UserRole;
 import com.example.xyz.domain.interfaces.IUser;
 import lombok.*;
 import org.springframework.data.annotation.Id;

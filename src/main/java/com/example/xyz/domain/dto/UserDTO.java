@@ -1,6 +1,6 @@
 package com.example.xyz.domain.dto;
 
-import com.example.xyz.domain.entities.UserRole;
+import com.example.xyz.domain.enums.UserRole;
 import com.example.xyz.domain.interfaces.IUser;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;

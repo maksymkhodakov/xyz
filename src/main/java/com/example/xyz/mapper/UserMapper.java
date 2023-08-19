@@ -1,7 +1,7 @@
 package com.example.xyz.mapper;
 
-import com.example.xyz.domain.entities.UserRole;
-import com.example.xyz.domain.entity.User;
+import com.example.xyz.domain.enums.UserRole;
+import com.example.xyz.domain.entities.User;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

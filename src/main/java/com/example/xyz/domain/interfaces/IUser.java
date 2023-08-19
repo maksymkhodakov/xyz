@@ -1,6 +1,6 @@
 package com.example.xyz.domain.interfaces;
 
-import com.example.xyz.domain.entities.UserRole;
+import com.example.xyz.domain.enums.UserRole;
 
 import java.time.LocalDateTime;
 

@@ -1,6 +1,6 @@
 package com.example.xyz.services.impl;
 
-import com.example.xyz.domain.entity.User;
+import com.example.xyz.domain.entities.User;
 import com.example.xyz.security.TokenDetails;
 import com.example.xyz.services.JwtTokenGenerator;
 import io.jsonwebtoken.Jwts;

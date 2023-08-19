@@ -1,6 +1,6 @@
 package com.example.xyz.repository;
 
-import com.example.xyz.domain.entity.User;
+import com.example.xyz.domain.entities.User;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;
 import reactor.core.publisher.Mono;
 
