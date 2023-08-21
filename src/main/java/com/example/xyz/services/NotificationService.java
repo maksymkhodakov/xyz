@@ -6,4 +6,5 @@ import reactor.core.publisher.Mono;
 public interface NotificationService {
     Mono<NotificationDTO> findNotificationByUid(String uid);
     Mono<NotificationDTO> findNotificationWithRecipientByUid(String uid);
+    void createNotification(NotificationDTO notificationDTO);
 }

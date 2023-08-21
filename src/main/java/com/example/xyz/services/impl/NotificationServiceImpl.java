@@ -5,6 +5,7 @@ import com.example.xyz.mapper.NotificationMapper;
 import com.example.xyz.repository.NotificationRepository;
 import com.example.xyz.repository.RecipientRepository;
 import com.example.xyz.services.NotificationService;
+import com.example.xyz.sqs.NotificationSQSPoller;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -19,6 +20,7 @@ public class NotificationServiceImpl implements NotificationService {
     NotificationRepository notificationRepository;
     RecipientRepository recipientRepository;
     NotificationMapper notificationMapper;
+    NotificationSQSPoller notificationSQSPoller;
 
     @Override
     public Mono<NotificationDTO> findNotificationByUid(String uid) {
@@ -34,5 +36,10 @@ public class NotificationServiceImpl implements NotificationService {
                     return notificationEntity;
                 })
                 .map(notificationMapper::map));
+    }
+
+    @Override
+    public void createNotification(NotificationDTO notificationDTO) {
+        notificationSQSPoller.sendMessage(notificationDTO);
     }
 }

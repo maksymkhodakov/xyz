@@ -5,10 +5,8 @@ import com.example.xyz.services.NotificationService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -17,6 +15,12 @@ import reactor.core.publisher.Mono;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class NotificationController {
     NotificationService notificationService;
+
+    @PostMapping
+    public ResponseEntity<Void> create(@RequestBody NotificationDTO notificationDTO) {
+        notificationService.createNotification(notificationDTO);
+        return ResponseEntity.ok().build();
+    }
 
     @GetMapping("/basic/{uid}")
     public Mono<NotificationDTO> findNotificationById(@PathVariable String uid) {
